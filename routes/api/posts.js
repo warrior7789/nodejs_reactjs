@@ -12,7 +12,7 @@ const Profile = require("../../models/Profile");
 const validatePostInput = require("../../validation/post");
 
 // @route   GET api/posts/test
-// @desc    Tests post route
+// @desc    Tests post routef
 // @access  Public
 router.get("/test", (req, res) => res.json({ msg: "Posts Works" }));
 
