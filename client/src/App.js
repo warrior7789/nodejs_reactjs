@@ -17,6 +17,8 @@ import store from "./store";
 import PrivateRoute from "./components/common/PrivateRoute";
 import PrivateRouteAdmin from "./components/common/PrivateRouteAdmin";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
 
 const loading = () => (
   <div className="animated fadeIn pt-3 text-center">Loading...</div>
@@ -29,11 +31,17 @@ const loading = () => (
 // Containers
 const Navbar = React.lazy(() => import("./components/Frontend/layout/Navbar"));
 const Footer = React.lazy(() => import("./components/Frontend/layout/Footer"));
-const Landing = React.lazy(() => import("./components/Frontend/layout/Landing"));
+const Landing = React.lazy(() =>
+  import("./components/Frontend/layout/Landing")
+);
 
-const Register = React.lazy(() => import("./components/Frontend/auth/Register"));
+const Register = React.lazy(() =>
+  import("./components/Frontend/auth/Register")
+);
 const Login = React.lazy(() => import("./components/Frontend/auth/Login"));
-const Dashboard = React.lazy(() => import("./components/Frontend/dashboard/Dashboard"));
+const Dashboard = React.lazy(() =>
+  import("./components/Frontend/dashboard/Dashboard")
+);
 const CreateProfile = React.lazy(() =>
   import("./components/Frontend/create-profile/CreateProfile")
 );
@@ -46,13 +54,24 @@ const AddExperience = React.lazy(() =>
 const AddEducation = React.lazy(() =>
   import("./components/Frontend/add-credentials/AddEducation")
 );
-const Profiles = React.lazy(() => import("./components/Frontend/profiles/Profiles"));
-const Profile = React.lazy(() => import("./components/Frontend/profile/Profile"));
+const Profiles = React.lazy(() =>
+  import("./components/Frontend/profiles/Profiles")
+);
+const Profile = React.lazy(() =>
+  import("./components/Frontend/profile/Profile")
+);
 const Posts = React.lazy(() => import("./components/Frontend/posts/Posts"));
 const Post = React.lazy(() => import("./components/Frontend/post/Post"));
-const NotFound = React.lazy(() => import("./components/Frontend/not-found/NotFound"));
+const NotFound = React.lazy(() =>
+  import("./components/Frontend/not-found/NotFound")
+);
 
 // administration page
+//import MainAdminLayout from './common/administrator/layout/main.js'
+
+const MainAdminLayout = React.lazy(() =>
+  import("./components/administrator/layout/Main.js")
+);
 
 const AdminDashboard = React.lazy(() =>
   import("./components/administrator/dashboard")
@@ -134,11 +153,17 @@ class App extends Component {
                   </Switch>
                   <Switch>
                     <PrivateRoute exact path="/post/:id" component={Post} />
-                  </Switch>
-                  <Switch>
-                    <PrivateRouteAdmin exact path="/administrator" component={AdminDashboard} />
-                  </Switch>
+                  </Switch>               
                   
+                  <Switch>
+                    <PrivateRouteAdmin
+                      exact
+                      path="/administrator"
+                      component={AdminDashboard}
+                    />
+                  </Switch>
+                 
+
                   <Route exact path="/not-found" component={NotFound} />
                 </div>
                 <Footer />
