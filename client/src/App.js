@@ -15,7 +15,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import PrivateRoute from "./components/common/PrivateRoute";
-import PrivateRouteAdmin from "./components/common/PrivateRouteAdmin";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";

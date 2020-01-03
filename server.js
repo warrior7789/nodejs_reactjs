@@ -40,6 +40,16 @@ app.use("/api/posts", posts);
 
 // Server static assets if in production
 console.log(process.env.NODE_ENV);
+
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("administrator/build"));
+
+  app.get("administration/*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "administrator", "build", "index.html"));
+  });
+}
+
 if (process.env.NODE_ENV === "production") {
   // Set static folder
   app.use(express.static("client/build"));

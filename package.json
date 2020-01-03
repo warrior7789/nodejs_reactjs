@@ -4,12 +4,13 @@
   "description": "social network",
   "main": "server.js",
   "scripts": {
+    "administrator-install": "npm install --prefix administrator",
     "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "admin-client": "npm start --prefix adminstration",
-    "dev": "concurrently \"npm run server\"  \" npm run client\"  ",
+    "administrator": "npm start --prefix administrator",
+    "dev": "concurrently \"npm run server\"  \" npm run client\" \" npm run administrator\" ",
     "admin": "concurrently \"npm run server\"  \" npm run admin-client\"  ",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
