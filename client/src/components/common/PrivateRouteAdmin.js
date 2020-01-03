@@ -1,14 +1,31 @@
 import React, { Fragment } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect ,Link} from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+
+
+
+const AppLayout = ({ children }) => (                       
+  <div>
+    <p>App Layout</p>
+    <br/>
+    <ul>
+      <li><Link to={'/homes'}>Home</Link></li>
+      <li><Link to={'/users'}>User</Link></li>
+    </ul>
+    {children}                                          
+  </div>           
+);
+
+
+
 
 const PrivateRouteAdmin = ({ component: Component, auth, ...rest }) => (
   <Route
     {...rest}
     render={props =>
       auth.isAuthenticated === true && auth.isAdmin === true ? (
-        <Component {...props} />
+        <AppLayout><Component {...props} /></AppLayout>
       ) : (
         <Redirect to="/login" />
       )

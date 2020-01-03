@@ -29,53 +29,43 @@ const loading = () => (
 //get layout front
 
 // Containers
-const Navbar = React.lazy(() => import("./components/Frontend/layout/Navbar"));
-const Footer = React.lazy(() => import("./components/Frontend/layout/Footer"));
+const Navbar = React.lazy(() => import("./components/layout/Navbar"));
+const Footer = React.lazy(() => import("./components/layout/Footer"));
 const Landing = React.lazy(() =>
-  import("./components/Frontend/layout/Landing")
+  import("./components/layout/Landing")
 );
 
 const Register = React.lazy(() =>
-  import("./components/Frontend/auth/Register")
+  import("./components/auth/Register")
 );
-const Login = React.lazy(() => import("./components/Frontend/auth/Login"));
+const Login = React.lazy(() => import("./components/auth/Login"));
 const Dashboard = React.lazy(() =>
-  import("./components/Frontend/dashboard/Dashboard")
+  import("./components/dashboard/Dashboard")
 );
 const CreateProfile = React.lazy(() =>
-  import("./components/Frontend/create-profile/CreateProfile")
+  import("./components/create-profile/CreateProfile")
 );
 const EditProfile = React.lazy(() =>
-  import("./components/Frontend/edit-profile/EditProfile")
+  import("./components/edit-profile/EditProfile")
 );
 const AddExperience = React.lazy(() =>
-  import("./components/Frontend/add-credentials/AddExperience")
+  import("./components/add-credentials/AddExperience")
 );
 const AddEducation = React.lazy(() =>
-  import("./components/Frontend/add-credentials/AddEducation")
+  import("./components/add-credentials/AddEducation")
 );
 const Profiles = React.lazy(() =>
-  import("./components/Frontend/profiles/Profiles")
+  import("./components/profiles/Profiles")
 );
 const Profile = React.lazy(() =>
-  import("./components/Frontend/profile/Profile")
+  import("./components/profile/Profile")
 );
-const Posts = React.lazy(() => import("./components/Frontend/posts/Posts"));
-const Post = React.lazy(() => import("./components/Frontend/post/Post"));
+const Posts = React.lazy(() => import("./components/posts/Posts"));
+const Post = React.lazy(() => import("./components/post/Post"));
 const NotFound = React.lazy(() =>
-  import("./components/Frontend/not-found/NotFound")
+  import("./components/not-found/NotFound")
 );
 
-// administration page
-//import MainAdminLayout from './common/administrator/layout/main.js'
-
-const MainAdminLayout = React.lazy(() =>
-  import("./components/administrator/layout/Main.js")
-);
-
-const AdminDashboard = React.lazy(() =>
-  import("./components/administrator/dashboard")
-);
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -153,17 +143,7 @@ class App extends Component {
                   </Switch>
                   <Switch>
                     <PrivateRoute exact path="/post/:id" component={Post} />
-                  </Switch>               
-                  
-                  <Switch>
-                    <PrivateRouteAdmin
-                      exact
-                      path="/administrator"
-                      component={AdminDashboard}
-                    />
                   </Switch>
-                 
-
                   <Route exact path="/not-found" component={NotFound} />
                 </div>
                 <Footer />
