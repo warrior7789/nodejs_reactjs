@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParse = require("body-parser");
 const passport = require("passport");
 const path = require("path");
-
+const url  = require('url');
 const app = express();
 
 //body parser middileware
@@ -41,29 +41,18 @@ app.use("/api/posts", posts);
 // Server static assets if in production
 console.log(process.env.NODE_ENV);
 
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("administrator/build"));
 
-  app.get("administration/*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "administrator", "build", "index.html"));
-  });
-}
 
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("client/build"));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
+i
+// Set static folder
+app.use(express.static("client/build"));
+app.get("*", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
+
 
 const port = process.env.PORT || 6030;
-if (process.env.NODE_ENV === "production") {
-  app.listen(port, () => console.log(`server running on port ${port}`));
-} else {
-  app.listen(port, function() {
-    console.log(`server running on port ${port}`);
-  });
-}
+app.listen(port,'192.168.1.30', function() {
+  console.log(`server running on port ${port}`);
+});

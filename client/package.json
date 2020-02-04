@@ -23,12 +23,12 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "PORT=3006 react-scripts start",
+    "start": "PORT=3018 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://www.reactnode.dev.com",
+  "proxy": "http://192.168.1.30:6030",
   "eslintConfig": {
     "extends": "react-app"
   },
