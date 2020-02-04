@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://192.168.1.30:6030",
+  "proxy": "http://www.indianyuva.in:6030",
   "eslintConfig": {
     "extends": "react-app"
   },
