@@ -17,7 +17,7 @@
     "react-moment": "^0.9.7",
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
+    "react-scripts": "3.4.1",
     "reactstrap": "^8.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://www.indianyuva.in:6030",
+  "proxy": "http://192.168.2.87:6030",
   "eslintConfig": {
     "extends": "react-app"
   },

@@ -52,6 +52,6 @@ app.get("*", (req, res) => {
 
 
 const port = process.env.PORT || 6030;
-app.listen(port,'192.168.1.30', function() {
+app.listen(port,'192.168.2.87', function() {
   console.log(`server running on port ${port}`);
 });
